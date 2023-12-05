@@ -1,0 +1,38 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id Jugador</th>
+      <th scope="col">Id Equipo</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">ApellidoP</th>
+      <th scope="col">ApellidoM</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Estatura</th>
+      <th scope="col">Posicion</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each datos}}
+      <tr>
+        <td>{{id_jugador}}</td>
+        <td>{{id_equipo}}</td>
+        <td>{{nombre}}</td>
+        <td>{{apellido_paterno}}</td>
+        <td>{{apellido_materno}}</td>
+        <td>{{edad}}</td>
+        <td>{{estatura}}</td>
+        <td>{{posicion}}</td>
+        <td>
+          <a
+            href="/datos/eliminar/{{id_jugador}}"
+            class="btn btn-danger"
+          >Eliminar</a>
+          <a href="/datos/editar/{{id_jugador}}" class="btn btn-secondary">Modificar</a>
+        </td>
+      </tr>
+    {{else}}
+      <h1>no hay datos por mostrar</h1>
+    {{/each}}
+  </tbody>
+</table>
